@@ -1,4 +1,3 @@
-#include <iostream>
 #include <node.h>
 #include <v8.h>
 
@@ -12,7 +11,15 @@ using namespace v8;
 
 Handle<Value> Connect(const Arguments& arg) {
     HandleScope scope;
-    return scope.Close(String::New("working"));
+    int rc = libssh2_init(0);
+    string status;
+    if ( rc == 0 ) {
+        status = "working";
+    }
+    else {
+        status = "not working";
+    }
+    return scope.Close(String::New(status));
 }
 
 void init(Handle<Object> target) {
