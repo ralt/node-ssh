@@ -13,18 +13,21 @@ Ssh::Ssh() {}
 Ssh::~Ssh() {}
 
 void Ssh::Init( Handle<Object> target ) {
+    HandleScope scope;
+
     // Prepare the constructor
     Local<FunctionTemplate> tpl = FunctionTemplate::New( New );
 
     // Set the class name
     tpl->SetClassName( String::New( "Ssh" ) );
+    tpl->InstanceTemplate()->SetInternalFieldCount( 1 );
 
     // Set the prototype methods
     tpl->PrototypeTemplate()->Set( String::NewSymbol( "connect" ),
         FunctionTemplate::New( Connect )->GetFunction() );
 
     // Set the constructor
-    Persistent<Function> constructor = Persistent<Function>::New(
+    Local<Function> constructor = Local<Function>::New(
         tpl->GetFunction() );
 
     // Set the constructor on the object

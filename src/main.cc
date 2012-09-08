@@ -1,6 +1,7 @@
 #define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <v8.h>
+#include <exception>
 #include "main.h"
 #include "ssh.h"
 
@@ -12,6 +13,8 @@ using namespace node;
 using namespace v8;
 
 void InitAll( Handle<Object> target ) {
+    HandleScope scope;
+
     // Initialize the ssh library
     libssh2_init( 0 );
 
