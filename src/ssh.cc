@@ -9,12 +9,31 @@ extern "C" {
 using namespace node;
 using namespace v8;
 
+void Ssh::Init( Handle<Object> target ) {
+    // Prepare the constructor
+    Local<FunctionTemplate> tpl = FunctionTemplate::New( New );
+
+    // Set the class name
+    tpl->SetClassName( String::New( "Ssh" ) );
+
+    // Set the prototype methods
+    tpl->PrototypeTemplate()->Set( String::NewSymbol( "connect" ),
+        FunctionTemplate::New( Connect )->GetFunction() );
+
+    // Set the constructor
+    Persistent<Function> constructor = Persistent<Function>::New(
+        tpl->GetFunction() );
+
+    // Set the constructor on the object
+    target->Set( String::NewSymbol( "Ssh" ), constructor );
+}
+
 Handle<Value> Ssh::New( const Arguments& args ) {
     HandleScope scope;
 
     // Spawn a new object and assign the property
     Ssh* obj = new Ssh();
-    obj->host = args[ 0 ]->StringValue();
+    obj->host = Persistent<String>::New( args[ 0 ]->ToString() );
     obj->Wrap( args.This() );
 
     // And return the new object
@@ -28,6 +47,6 @@ Handle<Value> Ssh::Connect( const Arguments& args ) {
     Ssh* obj = ObjectWrap::Unwrap<Ssh>( args.Holder() );
 
     // And return its host property
-    return scope.Close( String::New( obj->host ) );
+    return scope.Close( obj->host );
 }
 

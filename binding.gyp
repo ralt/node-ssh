@@ -2,8 +2,8 @@
     "targets": [ {
         "target_name": "ssh",
         "sources": [
-            "src/ssh.cc",
-            "src/main.cc"
+            "src/main.cc",
+            "src/ssh.cc"
         ],
         "conditions": [ [
             'OS=="linux"', {

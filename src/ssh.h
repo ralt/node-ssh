@@ -4,6 +4,9 @@
 #include <node.h>
 #include <v8.h>
 
+using namespace node;
+using namespace v8;
+
 class Ssh : public node::ObjectWrap {
     public:
         // Init method for node.js
