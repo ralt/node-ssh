@@ -1,6 +1,7 @@
 #define BUILDING_NODE_EXTENSION
 #include <node.h>
 #include <v8.h>
+#include "main.h"
 #include "ssh.h"
 
 extern "C" {

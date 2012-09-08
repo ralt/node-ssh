@@ -9,6 +9,9 @@ extern "C" {
 using namespace node;
 using namespace v8;
 
+Ssh::Ssh() {}
+Ssh::~Ssh() {}
+
 void Ssh::Init( Handle<Object> target ) {
     // Prepare the constructor
     Local<FunctionTemplate> tpl = FunctionTemplate::New( New );
