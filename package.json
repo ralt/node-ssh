@@ -1,0 +1,14 @@
+{
+    "name": "node-ssh",
+    "version": "0.0.1",
+    "description": "A native module using libssh2 to connect over HTTPS.",
+    "author": {
+        "name": "Florian Margaine",
+        "email": "florian@margaine.com",
+        "url": "http://margaine.com"
+    },
+    "main": "lib/index.js",
+    "engines": {
+        "node": ">= 0.8"
+    }
+}
