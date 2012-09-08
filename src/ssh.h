@@ -18,7 +18,7 @@ class Ssh : public node::ObjectWrap {
         static Handle<Value> Connect( const Arguments& args );
 
         // Public properties
-        Local<String> host;
+        Persistent<String> host;
 };
 
 #endif
