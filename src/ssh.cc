@@ -10,9 +10,15 @@ using namespace std;
 using namespace node;
 using namespace v8;
 
-int main() {
-    string s = "Hello";
-    clog << s << endl;
-    return 0;
+Handle<Value> Connect(const Arguments& arg) {
+    HandleScope scope;
+    return scope.Close(String::New("working"));
 }
+
+void init(Handle<Object> target) {
+    target->Set(String::NewSymbol("connect"),
+        FunctionTemplate::New(Connect)->GetFunction());
+}
+
+NODE_MODULE(ssh, init)
 
