@@ -12,15 +12,14 @@ extern "C" {
 using namespace node;
 using namespace v8;
 
-void InitAll( Handle<Object> target ) {
+void InitAll(Handle<Object> target) {
     HandleScope scope;
 
     // Initialize the ssh library
-    libssh2_init( 0 );
+    libssh2_init(0);
 
     // And our object
-    Ssh::Init( target );
+    Ssh::Init(target);
 }
 
-NODE_MODULE( ssh, InitAll )
-
+NODE_MODULE(ssh, InitAll)

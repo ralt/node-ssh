@@ -1,0 +1,106 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AR.host	build/Makefile	/^AR.host ?= ar$/;"	m
+AR.target	build/Makefile	/^AR.target ?= $(AR)$/;"	m
+ARFLAGS.host	build/Makefile	/^ARFLAGS.host := crsT$/;"	m
+ARFLAGS.target	build/Makefile	/^ARFLAGS.target ?= crsT$/;"	m
+BUILDING_NODE_EXTENSION	src/main.cc	1;"	d	file:
+BUILDTYPE	build/Makefile	/^BUILDTYPE ?= Release$/;"	m
+CC.host	build/Makefile	/^CC.host ?= gcc$/;"	m
+CC.target	build/Makefile	/^CC.target ?= $(CC)$/;"	m
+CFLAGS.host	build/Makefile	/^CFLAGS.host ?=$/;"	m
+CFLAGS.target	build/Makefile	/^CFLAGS.target ?= $(CFLAGS)$/;"	m
+CFLAGS_CC_Debug	build/ssh.target.mk	/^CFLAGS_CC_Debug := -fno-rtti \\$/;"	m
+CFLAGS_CC_Release	build/ssh.target.mk	/^CFLAGS_CC_Release := -fno-rtti \\$/;"	m
+CFLAGS_C_Debug	build/ssh.target.mk	/^CFLAGS_C_Debug := $/;"	m
+CFLAGS_C_Release	build/ssh.target.mk	/^CFLAGS_C_Release := $/;"	m
+CFLAGS_Debug	build/ssh.target.mk	/^CFLAGS_Debug := -Wall \\$/;"	m
+CFLAGS_Release	build/ssh.target.mk	/^CFLAGS_Release := -Wall \\$/;"	m
+CXX.host	build/Makefile	/^CXX.host ?= g++$/;"	m
+CXX.target	build/Makefile	/^CXX.target ?= $(CXX)$/;"	m
+CXXFLAGS.host	build/Makefile	/^CXXFLAGS.host ?=$/;"	m
+CXXFLAGS.target	build/Makefile	/^CXXFLAGS.target ?= $(CXXFLAGS)$/;"	m
+Connect	src/ssh.cc	/^Handle<Value> Ssh::Connect(const Arguments& args) {$/;"	f	class:Ssh
+DEFS_Debug	build/ssh.target.mk	/^DEFS_Debug := '-D_LARGEFILE_SOURCE' \\$/;"	m
+DEFS_Release	build/ssh.target.mk	/^DEFS_Release := '-D_LARGEFILE_SOURCE' \\$/;"	m
+DEPFLAGS	build/Makefile	/^DEPFLAGS = -MMD -MF $(depfile).raw$/;"	m
+GYP_CFLAGS	build/ssh.target.mk	/^$(OBJS): GYP_CFLAGS := $(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))  $(CFLAGS_$(BUILDTYPE)) $(CFLAGS_C_$(BUILDTYPE))$/;"	m
+GYP_CXXFLAGS	build/ssh.target.mk	/^$(OBJS): GYP_CXXFLAGS := $(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))  $(CFLAGS_$(BUILDTYPE)) $(CFLAGS_CC_$(BUILDTYPE))$/;"	m
+GYP_LDFLAGS	build/ssh.target.mk	/^$(obj).target\/ssh.node: GYP_LDFLAGS := $(LDFLAGS_$(BUILDTYPE))$/;"	m
+INCS_Debug	build/ssh.target.mk	/^INCS_Debug := -I\/home\/florian\/.node-gyp\/0.8.8\/src \\$/;"	m
+INCS_Release	build/ssh.target.mk	/^INCS_Release := -I\/home\/florian\/.node-gyp\/0.8.8\/src \\$/;"	m
+Init	src/ssh.cc	/^void Ssh::Init(Handle<Object> target) {$/;"	f	class:Ssh
+InitAll	src/main.cc	/^void InitAll(Handle<Object> target) {$/;"	f
+LDFLAGS.host	build/Makefile	/^LDFLAGS.host ?=$/;"	m
+LDFLAGS.target	build/Makefile	/^LDFLAGS.target ?= $(LDFLAGS)$/;"	m
+LDFLAGS_Debug	build/ssh.target.mk	/^LDFLAGS_Debug := -pthread \\$/;"	m
+LDFLAGS_Release	build/ssh.target.mk	/^LDFLAGS_Release := -pthread \\$/;"	m
+LIBS	build/ssh.target.mk	/^$(obj).target\/ssh.node: LIBS := $(LIBS)$/;"	m
+LIBS	build/ssh.target.mk	/^LIBS := -lssh2$/;"	m
+LINK	build/Makefile	/^LINK ?= flock $(builddir)\/linker.lock $(CXX)$/;"	m
+LINK.host	build/Makefile	/^LINK.host ?= g++$/;"	m
+LINK.target	build/Makefile	/^LINK.target ?= $(LINK)$/;"	m
+MAIN_H	src/main.h	2;"	d
+MAKEFLAGS	build/Makefile	/^MAKEFLAGS=-r$/;"	m
+New	src/ssh.cc	/^Handle<Value> Ssh::New(const Arguments& args) {$/;"	f	class:Ssh
+OBJS	build/ssh.target.mk	/^OBJS := $(obj).target\/$(TARGET)\/src\/main.o \\$/;"	m
+SSH_H	src/ssh.h	2;"	d
+Ssh	lib/index.js	/^var Ssh = require('..\/build\/Release\/ssh').Ssh;$/;"	v
+Ssh	src/ssh.cc	/^Ssh::Ssh() {}$/;"	f	class:Ssh
+Ssh	src/ssh.h	/^class Ssh : public node::ObjectWrap {$/;"	c
+TARGET	build/ssh.target.mk	/^TARGET := ssh$/;"	m
+TOOLSET	build/Makefile	/^TOOLSET := target$/;"	m
+TOOLSET	build/ssh.target.mk	/^$(OBJS): TOOLSET := $(TOOLSET)$/;"	m
+TOOLSET	build/ssh.target.mk	/^$(builddir)\/ssh.node: TOOLSET := $(TOOLSET)$/;"	m
+TOOLSET	build/ssh.target.mk	/^$(obj).target\/ssh.node: TOOLSET := $(TOOLSET)$/;"	m
+TOOLSET	build/ssh.target.mk	/^TOOLSET := target$/;"	m
+abs_builddir	build/Makefile	/^abs_builddir := $(abspath $(builddir))$/;"	m
+abs_obj	build/Makefile	/^abs_obj := $(abspath $(obj))$/;"	m
+abs_srcdir	build/Makefile	/^abs_srcdir := $(abspath $(srcdir))$/;"	m
+all_deps	build/Makefile	/^all_deps :=$/;"	m
+builddir	build/Makefile	/^builddir ?= $(builddir_name)\/$(BUILDTYPE)$/;"	m
+builddir_name	build/Makefile	/^builddir_name ?= .$/;"	m
+cmd_alink	build/Makefile	/^cmd_alink = rm -f $@ && $(AR.$(TOOLSET)) $(ARFLAGS.$(TOOLSET)) $@ $(filter %.o,$^)$/;"	m
+cmd_cc	build/Makefile	/^cmd_cc = $(CC.$(TOOLSET)) $(GYP_CFLAGS) $(DEPFLAGS) $(CFLAGS.$(TOOLSET)) -c -o $@ $<$/;"	m
+cmd_copy	build/Makefile	/^cmd_copy = ln -f "$<" "$@" 2>\/dev\/null || (rm -rf "$@" && cp -af "$<" "$@")$/;"	m
+cmd_cxx	build/Makefile	/^cmd_cxx = $(CXX.$(TOOLSET)) $(GYP_CXXFLAGS) $(DEPFLAGS) $(CXXFLAGS.$(TOOLSET)) -c -o $@ $<$/;"	m
+cmd_link	build/Makefile	/^cmd_link = $(LINK.$(TOOLSET)) $(GYP_LDFLAGS) $(LDFLAGS.$(TOOLSET)) -o $@ -Wl,--start-group $(LD_INPUTS) -Wl,--end-group $(LIBS)$/;"	m
+cmd_regen_makefile	build/Makefile	/^cmd_regen_makefile = \/home\/florian\/.node-gyp\/0.8.8\/tools\/gyp\/gyp -fmake --ignore-environment "--toplevel-dir=." -I\/home\/florian\/node-ssh\/build\/config.gypi -I\/usr\/local\/lib\/node_modules\/node-gyp\/addon.gypi -I\/home\/florian\/.node-gyp\/0.8.8\/common.gypi "--depth=." "-Goutput_dir=." "--generator-output=build" "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=\/home\/florian\/.node-gyp\/0.8.8" "-Dmodule_root_dir=\/home\/florian\/node-ssh" binding.gyp$/;"	m
+cmd_solink	build/Makefile	/^cmd_solink = $(LINK.$(TOOLSET)) -shared $(GYP_LDFLAGS) $(LDFLAGS.$(TOOLSET)) -Wl,-soname=$(@F) -o $@ -Wl,--whole-archive $(LD_INPUTS) -Wl,--no-whole-archive $(LIBS)$/;"	m
+cmd_solink_module	build/Makefile	/^cmd_solink_module = $(LINK.$(TOOLSET)) -shared $(GYP_LDFLAGS) $(LDFLAGS.$(TOOLSET)) -Wl,-soname=$(@F) -o $@ -Wl,--start-group $(filter-out FORCE_DO_CMD, $^) -Wl,--end-group $(LIBS)$/;"	m
+cmd_touch	build/Makefile	/^cmd_touch = touch $@$/;"	m
+command_changed	build/Makefile	/^command_changed = $(or $(subst $(cmd_$(1)),,$(cmd_$(call replace_spaces,$@))),\\$/;"	m
+d_files	build/Makefile	/^d_files := $(wildcard $(foreach f,$(all_deps),$(depsdir)\/$(f).d))$/;"	m
+depfile	build/Makefile	/^depfile = $(depsdir)\/$(call replace_spaces,$@).d$/;"	m
+depsdir	build/Makefile	/^depsdir := $(builddir)\/.deps$/;"	m
+dirx	build/Makefile	/^dirx = $(call unreplace_spaces,$(dir $(call replace_spaces,$1)))$/;"	m
+do_cmd	build/Makefile	/^define do_cmd$/;"	m
+do_postbuilds	build/Makefile	/^define do_postbuilds$/;"	m
+empty	build/Makefile	/^empty :=$/;"	m
+escape_quotes	build/Makefile	/^escape_quotes = $(subst ','\\'',$(1))$/;"	m
+escape_vars	build/Makefile	/^escape_vars = $(subst $$,$$$$,$(1))$/;"	m
+exact_echo	build/Makefile	/^exact_echo = printf '%s\\n' '$(call escape_quotes,$(1))'$/;"	m
+fixup_dep	build/Makefile	/^define fixup_dep$/;"	m
+obj	build/Makefile	/^obj := $(builddir)\/obj$/;"	m
+prereq_changed	build/Makefile	/^prereq_changed = $(filter-out FORCE_DO_CMD,$(filter-out $|,$?))$/;"	m
+quiet	build/Makefile	/^  quiet=$/;"	m
+quiet	build/Makefile	/^  quiet=quiet_$/;"	m
+quiet_cmd_alink	build/Makefile	/^quiet_cmd_alink = AR($(TOOLSET)) $@$/;"	m
+quiet_cmd_cc	build/Makefile	/^quiet_cmd_cc = CC($(TOOLSET)) $@$/;"	m
+quiet_cmd_copy	build/Makefile	/^quiet_cmd_copy = COPY $@$/;"	m
+quiet_cmd_cxx	build/Makefile	/^quiet_cmd_cxx = CXX($(TOOLSET)) $@$/;"	m
+quiet_cmd_link	build/Makefile	/^quiet_cmd_link = LINK($(TOOLSET)) $@$/;"	m
+quiet_cmd_regen_makefile	build/Makefile	/^quiet_cmd_regen_makefile = ACTION Regenerating $@$/;"	m
+quiet_cmd_solink	build/Makefile	/^quiet_cmd_solink = SOLINK($(TOOLSET)) $@$/;"	m
+quiet_cmd_solink_module	build/Makefile	/^quiet_cmd_solink_module = SOLINK_MODULE($(TOOLSET)) $@$/;"	m
+quiet_cmd_touch	build/Makefile	/^quiet_cmd_touch = TOUCH $@$/;"	m
+replace_spaces	build/Makefile	/^replace_spaces = $(subst $(space),?,$1)$/;"	m
+session	src/ssh.h	/^        Persistent<LIBSSH2_SESSION>* session;$/;"	m	class:Ssh
+space	build/Makefile	/^space := $(empty) $(empty)$/;"	m
+srcdir	build/Makefile	/^srcdir := ..$/;"	m
+unreplace_spaces	build/Makefile	/^unreplace_spaces = $(subst ?,$(space),$1)$/;"	m
+~Ssh	src/ssh.cc	/^Ssh::~Ssh() {}$/;"	f	class:Ssh

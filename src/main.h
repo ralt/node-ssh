@@ -7,7 +7,6 @@
 using namespace node;
 using namespace v8;
 
-void InitAll( Handle<Object> target );
+void InitAll(Handle<Object> target);
 
 #endif
-
