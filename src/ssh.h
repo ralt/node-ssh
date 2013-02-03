@@ -21,10 +21,15 @@ class Ssh : public node::ObjectWrap {
         ~Ssh();
 
         // Public methods for initialized object
-        static Handle<Value> New(const Arguments& args);
-        static Handle<Value> Connect(const Arguments& args);
+        static Handle<Value> New(const Arguments &args);
+        static Handle<Value> Connect(const Arguments &args);
+        static Handle<Value> Close(const Arguments &args);
 
+        // Properties
         LIBSSH2_SESSION *session;
+
+        // Close the Ssh connection and cleanup memory
+        void close();
 };
 
 #endif

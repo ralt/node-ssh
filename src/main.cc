@@ -15,9 +15,6 @@ using namespace v8;
 void InitAll(Handle<Object> target) {
     HandleScope scope;
 
-    // Initialize the ssh library
-    libssh2_init(0);
-
     // And our object
     Ssh::Init(target);
 }
