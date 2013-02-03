@@ -37,6 +37,10 @@ void Ssh::Init(Handle<Object> target) {
 Handle<Value> Ssh::New(const Arguments& args) {
     HandleScope scope;
 
+    // Create an Ssh object
+    Ssh *obj = new Ssh();
+    obj->Wrap(args.This());
+
     // Return the new object
     return args.This();
 }
@@ -45,14 +49,17 @@ Handle<Value> Ssh::Connect(const Arguments& args) {
     HandleScope scope;
 
     // Get the current object
-    Ssh *obj = ObjectWrap::Unwrap<Ssh>(args.Holder());
+    Ssh *obj = ObjectWrap::Unwrap<Ssh>(args.This());
 
     // New session
     LIBSSH2_SESSION *session = libssh2_session_init();
 
-    // Add the session to it
-    obj->session = Persistent<LIBSSH2_SESSION>::New(*session);
+    if (obj->session) {
+        libssh2_session_free(session);
+    }
+
+    obj->session = session;
 
     // And return the current object
-    return scope.Close(obj);
+    return True();
 }
