@@ -1,3 +1,9 @@
+#ifdef HAVE_SYS_SOCKET_H
+#include <sys/socket.h>
+#endif
+#ifdef HAVE_NETINET_IN_H
+#include <netinet/in.h>
+#endif
 #include <node.h>
 #include <v8.h>
 #include "ssh.h"
@@ -54,9 +60,29 @@ Handle<Value> Ssh::New(const Arguments &args) {
 
 Handle<Value> Ssh::Connect(const Arguments &args) {
     HandleScope scope;
+    unsigned long host_addr;
+    struct sockaddr_in sin;
+    int sock;
 
     // Get the current object
     Ssh *obj = ObjectWrap::Unwrap<Ssh>(args.This());
+
+    // Get the address
+    String::Utf8Value addr(args[0]->ToString());
+    printf("%s", *addr);
+
+    host_addr = inet_addr(*addr);
+    sock = socket(AF_INET, SOCK_STREAM, 0);
+
+    // Connection with a socket
+    sin.sin_family = AF_INET;
+    sin.sin_port = htons(22);
+    sin.sin_addr.s_addr = host_addr;
+    if (connect(sock, (struct sockaddr*)(&sin),
+                sizeof(struct sockaddr_in)) != 0) {
+        ThrowException(Exception::Error(
+            String::New("Failed to connect.")));
+    }
 
     // New session
     LIBSSH2_SESSION *session = libssh2_session_init();
@@ -66,7 +92,15 @@ Handle<Value> Ssh::Connect(const Arguments &args) {
     }
     obj->session = session;
 
-    // Get the address
+    // Establish connection
+    libssh2_session_handshake(session, sock);
+
+    // Password authentication
+    String::Utf8Value username(args[1]->ToString());
+    String::Utf8Value password(args[2]->ToString());
+    libssh2_userauth_password(session, *username, *password);
+
+    printf("Connected.");
 
     // If everything went fine, return true
     return True();
