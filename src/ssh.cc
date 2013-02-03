@@ -45,10 +45,13 @@ Handle<Value> Ssh::Connect(const Arguments& args) {
     HandleScope scope;
 
     // Get the current object
-    Ssh* obj = ObjectWrap::Unwrap<Ssh>(args.Holder());
+    Ssh *obj = ObjectWrap::Unwrap<Ssh>(args.Holder());
+
+    // New session
+    LIBSSH2_SESSION *session = libssh2_session_init();
 
     // Add the session to it
-    obj->session = Persistent<LIBSSH2_SESSION>::New(libssh2_session_init());
+    obj->session = Persistent<LIBSSH2_SESSION>::New(*session);
 
     // And return the current object
     return scope.Close(obj);

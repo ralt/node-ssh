@@ -25,7 +25,7 @@ class Ssh : public node::ObjectWrap {
         static Handle<Value> Connect(const Arguments& args);
 
         // Public properties
-        Persistent<LIBSSH2_SESSION>* session;
+        Persistent<LIBSSH2_SESSION> *session;
 };
 
 #endif
