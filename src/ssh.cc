@@ -93,7 +93,7 @@ Handle<Value> Ssh::Connect(const Arguments &args) {
     obj->session = session;
 
     // Establish connection
-    libssh2_session_handshake(session, sock);
+    libssh2_session_startup(session, sock);
 
     // Password authentication
     String::Utf8Value username(args[1]->ToString());
